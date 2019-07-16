@@ -1,0 +1,305 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Perl script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass{article}
+\documentclass[11pt]{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{subcaption}
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{amsmath}
+\usepackage{framed}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassTime): \hmwkTitle} % Top center head
+%\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+%\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+\setcounter{homeworkProblemCounter}{0}
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Written Homework 3} % Assignment title
+\newcommand{\hmwkDueDate}{Thrusday, Mar 7, 2019} % Due date
+\newcommand{\hmwkClass}{CSC421} % Course/class
+\newcommand{\hmwkClassTime}{LEC 5101} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Zhongtian Ouyang} % Your name
+\newcommand{\hmwkAuthorID}{1002341012} % Your ID
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}\\ \textbf{\hmwkAuthorID}}
+
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------\
+\begin{document}
+
+\maketitle
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Common Tools
+%----------------------------------------------------------------------------------------
+%\begin{framed}
+%\begin{lstlisting}[language=matlab]
+%\end{lstlisting}
+%\end{framed}
+
+% \begin{bmatrix}
+%0.5 & 0.6 \\ 
+%0.7 & 0.8
+%\end{bmatrix}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.6\linewidth]{q10a.png}
+%\label{fig:q10a}
+%\end{figure}\\
+
+%\begin{figure*}[!ht]
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{p4_1.JPG}
+%  \caption{Full set}
+%  \label{fig:sfig1}
+%\end{subfigure}
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{P4_2.JPG}
+%  \caption{Two each}
+%  \label{fig:sfig2}
+%\end{subfigure}%
+%\caption{Part4 (a)}
+%\label{fig:p4a}
+%\end{figure*}
+
+%\sum_{n=1}^{\infty} 2^{-n} = 1
+%\prod_{i=a}^{b} f(i)
+
+%\begin{equation}
+%\begin{split}
+%1+2+3+4+8x+7 & =1+2+3+4+4x+35 \\
+%& \Rightarrow x=7
+%\end{split}
+%\end{equation}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+\begin{homeworkProblem}
+\noindent \textit{Dropout}\\
+
+(a)
+\begin{equation}
+\begin{split}
+E(y) &= E[\sum_{j} m_j w_j x_j] \\
+&= E[m_1w_1x_1 + m_2w_2x_2 + ... + m_Jw_Jx_J] \\
+&= E[m_1w_1x_1] + ... + E[m_Jw_Jx_J]\\
+&= w_1x_1E[m_1] + ... + w_Jx_JE[m_J]\\
+&= w_1x_1(\frac{1}{2}) + ... + m_Jw_J(\frac{1}{2}) = \frac{1}{2}\sum_j w_jx_j = \frac{1}{2} \mathbf{w}\cdot \mathbf{x}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+Var(y) &= Var(\sum_{j} m_j w_j x_j)\\
+&= \sum_{j}Var(m_j w_j x_j),\ since\ they\ are\ independent \\
+&= \sum_{j}w_j^2 x_j^2 Var(m_j)\\
+&= \sum_{j}w_j^2 x_j^2 (E[m_j^2] - E[m_j]^2)\\
+&= \sum_{j}w_j^2 x_j^2 (\frac{1}{2} - \frac{1}{4}),\ E[m_j^2]= E[m_j] \ because\ m_j\ is\ either\ 0\ or\ 1,\ m_j = m_j^2\\
+&= \frac{1}{4}\sum_{j}w_j^2 x_j^2 = \frac{1}{4}(\mathbf{w} \cdot \mathbf{w})\cdot (\mathbf{x}\cdot \mathbf{x})
+\end{split}
+\end{equation}
+
+(b)\\
+Since $E(y) = \tilde y= \frac{1}{2}\sum_j w_j x_j = \sum_j (\frac{1}{2}w_j) x_j$, $\tilde{w_j} = \frac{1}{2}w_j$.\\
+\clearpage
+
+(c)\\
+\begin{equation}
+\begin{split}
+J &= \frac{1}{2N}\sum_{i=1}^{N} E[(y^{(i)} - t^{(i)})^2]\\
+&= \frac{1}{2N}\sum_{i=1}^{N} E[{y^{(i)}}^2 - 2y^{(i)}t^{(i)} + {t^{(i)}}^2]\\
+&=  \frac{1}{2N}\sum_{i=1}^{N} (E[{y^{(i)}}^2] - E[2y^{(i)}t^{(i)}] +E[{t^{(i)}}^2])\\
+&= \frac{1}{2N}\sum_{i=1}^{N} ((Var[y^{(i)}] + E[y^{(i)}]^2) - 2t^{(i)}E[y^{(i)}] + {t^{(i)}}^2)\\
+&=\frac{1}{2N}\sum_{i=1}^{N} ((\frac{1}{4}\sum_{j}w_j^2 x_j^2 + (\frac{1}{2}\sum_j w_jx^{(i)}_j)^2) - 2t^{(i)}\frac{1}{2}\sum_j w_jx^{(i)}_j + {t^{(i)}}^2)\\
+&= \frac{1}{2N}\sum_{i=1}^{N} ((\frac{1}{4}\sum_{j}(2\tilde{w_j})^2 x_j^2 + (\frac{1}{2}\sum_j 2\tilde{w_j} x^{(i)}_j)^2) - 2t^{(i)}\frac{1}{2}\sum_j 2\tilde{w_j} x^{(i)}_j + {t^{(i)}}^2)\\
+&= \frac{1}{2N}\sum_{i=1}^{N} (\sum_{j}\tilde{w_j}^2 x_j^2 + (\sum_j \tilde{w_j} x^{(i)}_j)^2 - 2t^{(i)}\sum_j \tilde{w_j} x^{(i)}_j + {t^{(i)}}^2)\\
+&= \frac{1}{2N}\sum_{i=1}^{N} (\sum_{j}\tilde{w_j}^2 x_j^2 + ({\tilde y}^{(i)})^2 - 2t^{(i)}\tilde y^{(i)} + {t^{(i)}}^2)\\
+&= \frac{1}{2N}\sum_{i=1}^{N}(({\tilde y}^{(i)})^2 - 2t^{(i)}\tilde y^{(i)} + {t^{(i)}}^2) + \frac{1}{2N}\sum_{i=1}^{N} \sum_{j}\tilde{w_j}^2 x_j^2\\
+&=\frac{1}{2N}\sum_{i=1}^{N}(\tilde y^{(i)} - t^{(i)})^2 + R(\tilde w_1, ..., \tilde w_D)
+\end{split}
+\end{equation}
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+\noindent \textit{RNN}\\
+$$
+U = 
+ \begin{bmatrix}
+1 & 1\\ 
+1 & 1\\ 
+1 & 1 
+\end{bmatrix}
+$$
+
+$$
+V = 
+\begin{bmatrix}
+1 & -1 & 2
+\end{bmatrix}
+$$
+
+$$
+W = 
+ \begin{bmatrix}
+h_1^{(t)} \rightarrow h_1^{(t+1)} & h_2^{(t)} \rightarrow h_1^{(t+1)} & h_3^{(t)} \rightarrow h_1^{(t+1)}\\ 
+h_1^{(t)} \rightarrow h_2^{(t+1)} & h_2^{(t)} \rightarrow h_2^{(t+1)} & h_3^{(t)} \rightarrow h_2^{(t+1)}\\ 
+h_1^{(t)} \rightarrow h_3^{(t+1)} & h_2^{(t)} \rightarrow h_3^{(t+1)} & h_3^{(t)} \rightarrow h_3^{(t+1)} 
+\end{bmatrix}
+=
+ \begin{bmatrix}
+0& 1 & 0\\ 
+0& 1 & 0\\ 
+0& 1 & 0 
+\end{bmatrix}
+$$
+
+$$
+b_h = 
+ \begin{bmatrix}
+-0.5 \\ -1.5 \\ -2.5 \\ 
+\end{bmatrix}
+$$
+
+$$
+b_y = -0.5
+$$
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,260 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Perl script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{subcaption}
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{amsmath}
+\usepackage{framed}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassTime): \hmwkTitle} % Top center head
+%\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+%\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+\setcounter{homeworkProblemCounter}{0}
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Written Homework 2} % Assignment title
+\newcommand{\hmwkDueDate}{Monday, Feb 11, 2019} % Due date
+\newcommand{\hmwkClass}{CSC421} % Course/class
+\newcommand{\hmwkClassTime}{LEC 5101} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Zhongtian Ouyang} % Your name
+\newcommand{\hmwkAuthorID}{1002341012} % Your ID
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}\\ \textbf{\hmwkAuthorID}}
+
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------\
+\begin{document}
+
+\maketitle
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Common Tools
+%----------------------------------------------------------------------------------------
+%\begin{framed}
+%\begin{lstlisting}[language=matlab]
+%\end{lstlisting}
+%\end{framed}
+
+% \begin{bmatrix}
+%0.5 & 0.6 \\ 
+%0.7 & 0.8
+%\end{bmatrix}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.6\linewidth]{q10a.png}
+%\label{fig:q10a}
+%\end{figure}\\
+
+%\begin{figure*}[!ht]
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{p4_1.JPG}
+%  \caption{Full set}
+%  \label{fig:sfig1}
+%\end{subfigure}
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{P4_2.JPG}
+%  \caption{Two each}
+%  \label{fig:sfig2}
+%\end{subfigure}%
+%\caption{Part4 (a)}
+%\label{fig:p4a}
+%\end{figure*}
+
+%\sum_{n=1}^{\infty} 2^{-n} = 1
+%\prod_{i=a}^{b} f(i)
+
+%\nabla %gradient symbol
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+\begin{homeworkProblem}
+
+\noindent \textit{Adam}\\
+(a)\\
+$(\alpha_A, \beta_1, \beta_2, \epsilon_A) = (\alpha_R, 0, \gamma, \epsilon_R)$\\
+Since Adam is a combination of RMSprop and Momentum. If we don't do the momentum part, it will be identical to RMSprop.\\
+By setting the hyperparameters of Adam as above, \\
+$m_t = \beta_1m_{t-1} + (1-\beta_1)g_t = 0m_{t-1} + (1-0)g_t = g_t$, \\
+$v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2 = \gamma v_{t-1}+ (1-\gamma)g_t^2$\\
+$\theta_t = \theta_{t-1} - \alpha_R g_t/(\sqrt{(v_t)} + \epsilon_R) = \theta_{t-1} - \alpha_A m_t/(\sqrt{v_t} + \epsilon_A) = \theta_{t-1} - \alpha_R g_t/(\sqrt{v_t} + \epsilon_R) $\\
+which is identical to RMSprop\\
+
+(b)\\
+$(\alpha_A, \beta_1, \beta_2, \epsilon_A) = (\alpha_S, \mu, 1, 1)$\\
+We can make Adam and SGD with momentum equivalent by satisfying the following conditions: $m_t = -p_t$, $(\sqrt{v_t} + \epsilon_R) = 1$ and $\alpha_A = \alpha_S$\\
+
+If $v_t = 0$, $\epsilon_A = 1$, $\sqrt{v_t} + \epsilon_A = 1$. We can achieve this by setting $\beta_2$ to 1. Since $v_0  = 0$, $v_1, v_2 ... v_t = v_0 = 0$\\
+
+We can prove by induction that $m_t = -p_t$ when $\beta_1 =  \mu$. \\
+$m_0 = 0 = -p_0$,\\
+$m_1 = \beta_1 m_0 + (1 - \beta_1)g_1 = (1 - \beta_1)g_1 = (1 - \mu)\nabla J(\theta_0)$, $p_1 = \mu p_0 - (1-\mu)\nabla J(\theta_0) = - (1-\mu)\nabla J(\theta_0)$. $m_1 = -p_1$\\
+Assume $m_{t-1} = -p_{t-1}$, $m_t = \beta_1 m_{t-1} + (1 - \beta_1)g_t = -\mu p_{t-1} +  (1 - \mu)\nabla J(\theta_{t-1}) = -(\mu p_{t-1} -  (1 - \mu)\nabla J(\theta_{t-1}))$, $p_t = \mu p_{t-1} -  (1 - \mu)\nabla J(\theta_{t-1})$. $m_t = -p_t$\\
+
+By setting the hyperparameters of Adam as above, $\theta_t = \theta_{t-1} - \alpha_A m_t/ (\sqrt{v_t} + \epsilon_A) = \theta_{t-1} + \alpha_S p_t/1 = \theta_{t-1} + \alpha_S p_t$, which is identical to SGD with momentum.\\
+\clearpage
+(c)\\
+$\tilde L(y,t) = CL(y,t)$, $\nabla\tilde{J}(\theta_0) = C \nabla J(\theta_0)$, $\tilde g_t = Cg_t$\\
+
+Prove $\tilde m_t = C m_t$ for $t \geq 1$:\\
+Base Case:\\
+$\tilde m_1 = \beta_1 \tilde m_0 + (1-\beta_1)\tilde g_1 = C(1-\beta_1)g_1$, $m_1 = \beta_1 m_0 + (1-\beta_1) g_1 = (1-\beta_1)g_1$. \\
+$\tilde  m_1 = C m_1$.\\
+Inductive Steps: Assume $\tilde m_{t-1} = C m_{t-1}$\\
+$\tilde m_t = \beta_1 \tilde m_{t-1} + (1-\beta_1)\tilde g_t = C\beta_1m_{t-1} + C(1-\beta_1)g_t = C(\beta_1m_{t-1} + (1-\beta_1)g_t)$, \\
+$m_t = \beta_1m_{t-1} + (1-\beta_1)g_t$. \\
+$\tilde  m_t= C m_t$.\\
+
+Prove $\tilde v_t = C^2 v_t$ for $t \geq 1$:\\
+Base Case:\\
+$\tilde v_1 = \beta_2 \tilde v_0 + (1-\beta_2)\tilde g_1^2 = C^2(1-\beta_2)g_1^2$, $v_1 = \beta_2 v_0 + (1-\beta_2) g_1^2 = (1-\beta_2)g_1^2$.\\
+$\tilde  v_1 = C^2 v_1$.\\
+Inductive Steps: Assume $\tilde v_{t-1} = C^2 v_{t-1}$\\
+$\tilde v_t = \beta_2 \tilde v_{t-1} + (1-\beta_2)\tilde g_t^2 =C^2 \beta_2v_{t-1} + C^2(1-\beta_2)g_t^2 = C^2(\beta_2 v_{t-1} +(1-\beta_2)g_t^2)$, \\
+$v_t = \beta_2 v_{t-1} +(1-\beta_2)g_t^2$. \\
+$\tilde  v_t = C^2 v_t$.\\
+
+Prove $\tilde \theta_t =\theta_t$ for $t \geq 0$:
+Base Case:
+$\tilde \theta_0 =\theta_0$ because they initialize to the same value
+Inductive Steps: Assume $\tilde \theta_{t-1} =  \theta_{t-1}$\\
+$\tilde \theta_t = \tilde \theta_{t-1} - \alpha_A\tilde m_t/(\sqrt{\tilde v_t} + \epsilon_A) = \theta_{t-1} - \alpha_A C m_t/(\sqrt{C^2 v_t} + 0) =\theta_{t-1} - \alpha_A C m_t/ C\sqrt{v_t} = \theta_{t-1} - \alpha_A m_t/\sqrt{v_t}$, \\
+$\theta_t = \theta_{t-1} - \alpha_A m_t/(\sqrt{v_t} + \epsilon_A) = \theta_{t-1} - \alpha_A m_t/(\sqrt{v_t} + 0)  = \theta_{t-1} - \alpha_A m_t/\sqrt{v_t}$\\
+$\tilde \theta_t = \theta_t$
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+
+\end{document}

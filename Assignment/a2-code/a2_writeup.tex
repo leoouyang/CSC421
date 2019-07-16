@@ -1,0 +1,337 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Perl script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{subcaption}
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{amsmath}
+\usepackage{framed}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassTime): \hmwkTitle} % Top center head
+%\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+%\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+\setcounter{homeworkProblemCounter}{0}
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Part \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Programming Assignment 2} % Assignment title
+\newcommand{\hmwkDueDate}{Thrusday, Feb 28, 2019} % Due date
+\newcommand{\hmwkClass}{CSC421} % Course/class
+\newcommand{\hmwkClassTime}{LEC 5101} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Zhongtian Ouyang} % Your name
+\newcommand{\hmwkAuthorID}{1002341012} % Your ID
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}\\ \textbf{\hmwkAuthorID}}
+
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------\
+\begin{document}
+
+\maketitle
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Common Tools
+%----------------------------------------------------------------------------------------
+%\begin{framed}
+%\begin{lstlisting}[language=matlab]
+%\end{lstlisting}
+%\end{framed}
+
+% \begin{bmatrix}
+%0.5 & 0.6 \\ 
+%0.7 & 0.8
+%\end{bmatrix}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.6\linewidth]{q10a.png}
+%\label{fig:q10a}
+%\end{figure}\\
+
+%\begin{figure*}[!ht]
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{p4_1.JPG}
+%  \caption{Full set}
+%  \label{fig:sfig1}
+%\end{subfigure}
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{P4_2.JPG}
+%  \caption{Two each}
+%  \label{fig:sfig2}
+%\end{subfigure}%
+%\caption{Part4 (a)}
+%\label{fig:p4a}
+%\end{figure*}
+
+%\sum_{n=1}^{\infty} 2^{-n} = 1
+%\prod_{i=a}^{b} f(i)
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+\begin{homeworkProblem}
+\noindent \textit{Colourization as Regression}\\
+
+1.\\
+The RegressionCNN has 6 convolution layers. For filter sizes, the number in the bracket is the depth of each filter. I put them in brackets because I am not sure whether we should count this in this case. Also, the answers are for the current training settings. If we change kernel to 5, kernel size would be 5 x 5. If we change num\_filters to 50, 32 will becom 50, while 64 will become 100.\\
+\begin{tabular}{|c|c|c|}
+\hline
+Layer & Filter/Kernel Size & Number of filters \\
+\hline
+downconv1 &   3 x 3 (x 1)  &  32\\
+\hline
+downconv2&   3 x 3  (x 32) &  64\\
+\hline
+rfconv &   3 x 3 (x 64)  &  64\\
+\hline
+upconv1 &   3 x 3 (x 64)  &  32\\
+\hline
+upconv2 &   3 x 3 (x 32)  &  3\\
+\hline
+finalconv &   3 x 3 (x 3)   &  3\\
+\hline
+\end{tabular}\\
+
+2.\\
+In the given setting, we are training the CNN model for 25 epochs.\\
+
+3.\\
+I have tried training for 10, 15, 25 and 50 epochs. While the training loss is decreasing as we increase the number of epochs, the output image doesn't have much difference. The output images are not coloured well. They look very dull and are very similar in color.\\
+
+4.\\
+The color we observe are not divided in three channels like colors in RGB. For example, suppose the target is (120, 50, 240), (120, 0, 240) and (120, 100, 240) will same the same loss, while for human, they look very different. Using the least square as a loss, if the network always output an average color, such as gray, it would have a relative small loss to the different colors of images in the dataset. That is why the output image looks dull. \\
+
+5.\\
+Framing colourization problem as a classification problem force the neural network to choose an color that it believes to be the most accurate instead of the mediocre, average guess.\\
+
+
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+\noindent \textit{Colourization as Classification}\\
+
+NOTE: The answers for this question and all following questions are based on the implementation where the number of output channels for upconv2 is num\_colours(24).\\
+
+1.\\
+In colourization.ipynb\\
+
+2.\\
+Compare the the previous regression model, the colour are overall much more accurate. Even though there are pixels with wrong colour or are still gray, many of the objects have similar color compare to the targets. Some of the wrong-coloured objects from validation images include a gray sky instead of a blue sky, and a white horse instead of a yellow one.\\
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+\noindent \textit{Skip Connections}\\
+1.\\
+In colourization.ipynb\\
+
+2.\\
+The result improved by a moderate amount compare to the previous model. Both the validation loss and accuracy are improved. The validation loss decreased from 1.59 to 1.36 and the accuracy increased from 41\% to 48\%. The output image is also better. Some of the pixels that were gray previously are now filled with correct color.\\
+The reasons may be that:\\
+a. Some information was lost during the pooling in the previous layers, adding a skip connection provide some of those lost information to later layers.\\
+b. Passing the original image to the last layer helps it to fill in the colours while maintaining the original intensity and the image content.\\
+
+3.\\
+The batch size I have tested are 10, 50, 100, 250, 1000. I trained the U-net for 25 epochs using these batch sizes. \\
+With batch size being 10, the overall outcome is slightly better, with lower validation and training loss and higher accuracy. However, it takes a significantly longer time to train. Also, the training curve is less stable for the validation set.\\
+Using 50 as batch size generate similar result to the one using original 100 batch size. \\
+Using a batch size of 250 or 1000 will have worse outcomes after 25 epochs of training because they don't update as much. Both the validation and training loss increase and the accuracy drop significantly. And the time used for training is only slightly shorter.\\
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+\noindent \textit{Super-Resolution}\\
+
+1.\\
+ The resolution of the output image is $\frac{1}{16}$ of the input image because each average pool layer with kernel size = 2 reduce the resolution of image to $\frac{1}{4}$ of the original.\\
+
+2.\\
+The output from both models are almost identical while UNet has a little bit lower loss. The bilinear interpolation results looks like a blurred version of target image. Compare to the bilinear interpolation results, the neural network result has much more distinct boundarys between objects and more details.\\
+Conv nets are better because:\\
+a.With more parameters and nonlinearlity, a neural net is capable of capturing more information and regularities in reconstructing the picture. While bilinear interpolation is only a weighted average of two weighted averages\\
+b.Conv nets can learn and accomodate to some specific characterestics of the target. In our example, for example, are all images with horses. And capturing such information in the parameters can help the neural network make better guesses. As a comparison, bilinear interpolation apply the same set of rules to any kind of images; so it is a much more general algorithm with some general assumptions.
+
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+\noindent \textit{Visualizing Intermediate Activations}\\
+
+1.\\
+The activations in the first layer of CNN seems to resemble the input picture a lot. It seems to be extracting different information such as gradient of intensity in the input picture, recognizing boundary of objects, etc. Many details from the original input image is still visible. In the later layers, the activation is more obscure. While some still roughly maintain the shape of input, others are not really recognizable.\\
+
+2.\\
+The first three layers should be the same as CNN's. In the later layers, especially the last layer, for those activations that resemble the shape of the input picture, more details can be observed. This should be a result of passing in the image directly into last layer.\\
+
+3.\\
+Different from the previous activations for colorization, the activations for super-resolution are mostly blurry and obscure. The reason could be that the input image itself is with low resolution. The activations for the later layers ressemble the target image a little bit more.\\
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\noindent \textit{Conceptional Problems}\\
+
+1.\\
+a) learning rate\\
+b) kernel size\\
+c) number of filters in each layer\\
+d) number of layers\\
+e) activation functions\\
+
+2.\\
+The output won't change because maxpooling is outputting the max value among a group of values. And since ReLU function is an non-decreasing function, the value get chosen is the same. ReLU(max(a,b,c,d)) will be the same as max(ReLU(a), ReLU(b), ReLU(c), ReLU(d))
+
+3.\\
+According to the paper, a way to improve the evaluation to match with human assessment better is to use a pretrained image classification neural network as a fixed loss network. So if the pretrained neural network can well handle the output of the currently training neural network, we have a small loss. Vice Versa.
+
+4.\\
+In our case, we don't need to modify our trained model at all for test images that are larger than 32 x 32. The reason is that all the layers in our neural network are convolution layers. For those layers, the size of input don't matter since they are more like feature extractors.
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+
+\end{document}

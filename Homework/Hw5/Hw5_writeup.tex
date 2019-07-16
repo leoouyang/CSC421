@@ -1,0 +1,306 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Perl script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass{article}
+\documentclass[11pt]{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{subcaption}
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{amsmath}
+\usepackage{framed}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassTime): \hmwkTitle} % Top center head
+%\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+%\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+\setcounter{homeworkProblemCounter}{0}
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Written Homework 5} % Assignment title
+\newcommand{\hmwkDueDate}{Thrusday, April 4, 2019} % Due date
+\newcommand{\hmwkClass}{CSC421} % Course/class
+\newcommand{\hmwkClassTime}{LEC 5101} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Zhongtian Ouyang} % Your name
+\newcommand{\hmwkAuthorID}{1002341012} % Your ID
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}\\ \textbf{\hmwkAuthorID}}
+
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------\
+\begin{document}
+
+\maketitle
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Common Tools
+%----------------------------------------------------------------------------------------
+%\begin{framed}
+%\begin{lstlisting}[language=matlab]
+%\end{lstlisting}
+%\end{framed}
+
+% \begin{bmatrix}
+%0.5 & 0.6 \\ 
+%0.7 & 0.8
+%\end{bmatrix}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.6\linewidth]{q10a.png}
+%\label{fig:q10a}
+%\end{figure}\\
+
+%\begin{figure*}[!ht]
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{p4_1.JPG}
+%  \caption{Full set}
+%  \label{fig:sfig1}
+%\end{subfigure}
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{P4_2.JPG}
+%  \caption{Two each}
+%  \label{fig:sfig2}
+%\end{subfigure}%
+%\caption{Part4 (a)}
+%\label{fig:p4a}
+%\end{figure*}
+
+%\sum_{n=1}^{\infty} 2^{-n} = 1
+%\prod_{i=a}^{b} f(i)
+
+%\begin{equation}
+%\begin{split}
+%1+2+3+4+8x+7 & =1+2+3+4+4x+35 \\
+%& \Rightarrow x=7
+%\end{split}
+%\end{equation}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+\begin{homeworkProblem}
+\noindent \textit{VFE/ELBO}\\
+
+(a)\\
+\begin{equation}
+\begin{split}
+F(q) & = E_q[logp(\mathbf x|\mathbf z)] - D_{KL}(q(\mathbf z)||p(\mathbf z))\\
+&= E_q[logp(\mathbf x|\mathbf z) - logq(\mathbf z) + logp(\mathbf z)]\\
+&= E_q[log(p(\mathbf x|\mathbf z) p(\mathbf z) ) - logq(\mathbf z)]\\
+&= E_q[log(p(\mathbf z|\mathbf x) p(\mathbf x) ) - logq(\mathbf z)]\ \#Bayes'\ Rule\\
+&= E_q[logp(\mathbf x) + logp(\mathbf z|\mathbf x) - logq(\mathbf z)]\\
+&=logp(\mathbf x) - E_q[logq(\mathbf z) - logp(\mathbf z|\mathbf x) ]\\
+&= logp(\mathbf x) - D_{KL}(q(\mathbf z)||p(\mathbf z|\mathbf x)) 
+\end{split}
+\end{equation}
+
+(b)\\
+\begin{equation}
+\begin{split}
+D_{KL}(q(\mathbf z)||p(\mathbf z)) 
+&= E_q[logq(\mathbf z) - logp(\mathbf z)]\\
+&= E_q[log(\prod_{i=1}^{D}q_i(z_i)) - log(\prod_{i=1}^{D}p_i(z_i))]\\
+&= E_q[\sum_{i=1}^{D}log(q_i(z_i)) - \sum_{i=1}^{D}log(p_i(z_i))]\\
+&= E_q[\sum_{i=1}^{D}(logq_i(z_i) - logp_i(z_i))]\\
+&= \sum_{i=1}^{D} E_q[logq_i(z_i) - logp_i(z_i)]\\
+&= \sum_{i=1}^{D}D_{KL}(q_i(z_i)||p_i(z_i)) 
+\end{split}
+\end{equation}
+\clearpage
+(c)\\
+\begin{equation}
+\begin{split}
+D_{KL}(q(z)||p(z)) 
+&= E_q[logq(z) - logp(z)]\\
+&= \int q(z)(logq(z)-logp(z)) dz\\
+&= \int q(z)log\frac{q(z)}{p(z)} dz\\
+&= \int q(z)log\frac{\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{(z-\mu)^2}{2\sigma^2})}{\frac{1}{\sqrt{2\pi}}exp(-\frac{z^2}{2})} dz\\
+&= \int q(z)log\frac{\frac{1}{\sqrt{2\pi}\sigma}}{\frac{1}{\sqrt{2\pi}}}dz + \int q(z)log\frac{exp(-\frac{(z-\mu)^2}{2\sigma^2})}{exp(-\frac{z^2}{2})} dz\\
+&= log\frac{1}{\sigma}\int q(z) dz + \int q(z)(-\frac{(z-\mu)^2}{2\sigma^2} + \frac{z^2}{2}) dz\\
+&= log\frac{1}{\sigma} - \int q(z)\frac{(z-\mu)^2}{2\sigma^2}dz + \int q(z)\frac{z^2}{2} dz\\
+&= log\frac{1}{\sigma} - \frac{1}{2\sigma^2}\int q(z)(z-\mu)^2dz + \frac{1}{2}\int q(z)z^2 dz\\
+&= log\frac{1}{\sigma} - \frac{1}{2\sigma^2}Var(z) + \frac{1}{2}E_q[z^2]\\
+&= log\frac{1}{\sigma} - \frac{1}{2}+ \frac{1}{2}(Var(z) + E_q[z]^2)\\
+&= -\frac{1}{2}log(\sigma^2) -  \frac{1}{2} + \frac{1}{2}(\sigma^2+ \mu^2)\\
+&= \frac{1}{2}(\sigma^2 + \mu^2 - log(\sigma^2) - 1)
+\end{split}
+\end{equation}
+\clearpage
+(d)\\
+As defined in the question, to find $D_{KL}$, first, we want to find $\partial t/\partial \theta = \bar \theta = [\bar \mu, \bar \sigma]$
+\begin{equation}
+\begin{split}
+\bar t &= 1\\
+\bar r &= 1\\
+\bar s &= -1\\
+\bar z &= \bar r \frac{\partial r}{\partial z} + \bar s \frac{\partial s}{\partial z}\\
+	&= 1\frac{\partial}{\partial z} logq(z) + (-1)\frac{\partial}{\partial z}logp(z)\\
+	&= \frac{\partial}{\partial z} logq(z) - \frac{\partial}{\partial z}logp(z)\\
+\frac{\partial}{\partial z} logq(z) &= \frac{\partial}{\partial z}log(\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{(z-\mu)^2}{2\sigma^2}))\\
+	&=  \frac{\partial}{\partial z}(log(\frac{1}{\sqrt{2\pi}\sigma}) -\frac{(z-\mu)^2}{2\sigma^2})\\
+	&= \frac{\partial}{\partial z}(-\frac{(z-\mu)^2}{2\sigma^2})\\
+	&= -\frac{(z-\mu)}{\sigma^2}\\
+\frac{\partial}{\partial z}logp(z) &= \frac{\partial}{\partial z}log(\frac{1}{\sqrt{2\pi}}exp(-\frac{z^2}{2}))\\
+	&= \frac{\partial}{\partial z}(-\frac{z^2}{2})\\
+	&= -z\\
+\bar z &= -\frac{(z-\mu)}{\sigma^2} + z\\
+\bar \mu &= \bar z = -\frac{(z-\mu)}{\sigma^2} + z\\
+\bar \sigma &= \bar z \epsilon  = \epsilon(-\frac{(z-\mu)}{\sigma^2} + z)
+\end{split}
+\end{equation}
+
+Since $\nabla_\theta D_{KL}(q(z)||p(z)) = E_\epsilon[\nabla_\theta t]$ where $\epsilon \sim N(0,1) $:
+\begin{equation}
+\begin{split}
+\frac{\partial}{\partial \mu} D_{KL}(q(z)||p(z)) &= E_\epsilon[\bar \mu]\\
+	&= E_\epsilon[-\frac{(z-\mu)}{\sigma^2} + z] \\
+	&= E_\epsilon[-\frac{(\mu+\sigma\epsilon-\mu)}{\sigma^2} + \mu+\sigma\epsilon]\\
+	&= E_\epsilon[-\frac{(\sigma\epsilon)}{\sigma^2}] + E_\epsilon[\mu] + E_\epsilon[\sigma\epsilon]\\
+	&= \mu\ \ \ \# since\ \mu_\epsilon = 0
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\frac{\partial}{\partial \sigma} D_{KL}(q(z)||p(z)) &= E_\epsilon[\bar \sigma]\\
+	&= E_\epsilon[ \epsilon(-\frac{(z-\mu)}{\sigma^2} + z)]\\
+	&= E_\epsilon[ \epsilon(-\frac{(\mu+\sigma\epsilon-\mu)}{\sigma^2} + \mu+\sigma\epsilon)]\\
+	&= E_\epsilon[ \epsilon(-\frac{\epsilon}{\sigma} + \mu+\sigma\epsilon)]\\
+	&= E_\epsilon[-\frac{\epsilon^2}{\sigma}] + E_\epsilon[\epsilon \mu] + E_\epsilon[\sigma\epsilon^2]\\
+	&= -\frac{1}{\sigma}E_\epsilon[\epsilon^2] +  \mu E_\epsilon[\epsilon] + \sigma E_\epsilon[\epsilon^2]\\
+    &= -\frac{1}{\sigma}(Var[\epsilon] + E_\epsilon[\epsilon]^2) +  \mu * 0 + \sigma (Var[\epsilon] + E_\epsilon[\epsilon]^2)\\
+    &= -\frac{1}{\sigma}(1 + 0^2) +  \mu * 0 + \sigma (1 + 0^2)\\
+    &= \sigma -\frac{1}{\sigma}
+\end{split}
+\end{equation}
+\clearpage
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+\end{document}

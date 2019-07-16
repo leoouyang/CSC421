@@ -1,0 +1,299 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Perl script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass{article}
+\documentclass[11pt]{article}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{subcaption}
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{amsmath}
+\usepackage{framed}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassTime): \hmwkTitle} % Top center head
+%\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+%\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+%\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+%\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+\setcounter{homeworkProblemCounter}{0}
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Written Homework 3} % Assignment title
+\newcommand{\hmwkDueDate}{Thrusday, Mar 7, 2019} % Due date
+\newcommand{\hmwkClass}{CSC421} % Course/class
+\newcommand{\hmwkClassTime}{LEC 5101} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Zhongtian Ouyang} % Your name
+\newcommand{\hmwkAuthorID}{1002341012} % Your ID
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}\\ \textbf{\hmwkAuthorID}}
+
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------\
+\begin{document}
+
+\maketitle
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Common Tools
+%----------------------------------------------------------------------------------------
+%\begin{framed}
+%\begin{lstlisting}[language=matlab]
+%\end{lstlisting}
+%\end{framed}
+
+% \begin{bmatrix}
+%0.5 & 0.6 \\ 
+%0.7 & 0.8
+%\end{bmatrix}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.6\linewidth]{q10a.png}
+%\label{fig:q10a}
+%\end{figure}\\
+
+%\begin{figure*}[!ht]
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{p4_1.JPG}
+%  \caption{Full set}
+%  \label{fig:sfig1}
+%\end{subfigure}
+%\begin{subfigure}{.5\textwidth}
+% \centering
+%  \includegraphics[width=.5\linewidth]{P4_2.JPG}
+%  \caption{Two each}
+%  \label{fig:sfig2}
+%\end{subfigure}%
+%\caption{Part4 (a)}
+%\label{fig:p4a}
+%\end{figure*}
+
+%\sum_{n=1}^{\infty} 2^{-n} = 1
+%\prod_{i=a}^{b} f(i)
+
+%\begin{equation}
+%\begin{split}
+%1+2+3+4+8x+7 & =1+2+3+4+4x+35 \\
+%& \Rightarrow x=7
+%\end{split}
+%\end{equation}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+\begin{homeworkProblem}
+\noindent \textit{LSTM Gradient}\\
+(a)
+\begin{equation}
+\begin{split}
+\overline{h^{(t)}} &= \overline{i^{(t+1)}} i^{(t+1)} (1-i^{(t+1)}) w_{ih}\\
+							&+ \overline{f^{(t+1)}} f^{(t+1)} (1-f^{(t+1)}) w_{fh}\\
+							&+ \overline{o^{(t+1)}} o^{(t+1)} (1-o^{(t+1)}) w_{oh}\\
+							&+ \overline{g^{(t+1)}} (1-{g^{(t+1)}}^2) w_{gh}\\
+\overline{c^{(t)}} &= \overline{c^{(t+1)}}f^{(t+1)} + \overline{h^{(t)}}o^{(t)}(1- (tanh(c^{(t)}))^2)\\
+\overline{g^{(t)}} &= \overline{c^{(t)}}i^{(t)}\\
+\overline{o^{(t)}} &= \overline{h^{(t)}}tanh(c^{(t)})\\
+\overline{f^{(t)}} &= \overline{c^{(t)}}c^{(t-1)}\\
+\overline{i^{(t)}} &= \overline{c^{(t)}}g^{(t)}\\
+\end{split}
+\end{equation}
+If $h^{(t)}$ is used in $y^{(t)}$, $\overline{h^{(t)}} += \overline{y^{(t)}}(\partial y^{(t)}/ \partial h^{(t)})$\\
+If $h^{(t)}$ is used in Loss function $L$, $\overline{h^{(t)}} += \overline{L}(\partial L/ \partial h^{(t)})$\\
+
+(b)\\
+$$\overline{w_{ix}} = \sum_t \overline{i^{(t)}}i^{(t)}(1-i^{(t)})x^{(t)}$$
+
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+\noindent \textit{Multidimensional RNN}\\
+(a)\\
+Number of Weights:\\
+$W_{in}^T: D \times H$\\
+$W_{W}^T: H\times H$\\
+$W_{W}^T: H\times H$\\
+Total: $(D+2H) \times H$\\
+
+Number of arithmetic operations for an $h^{(i,j)}$\\
+Activation function elementwise(assume $n_a$ arithmatic operations to evaluate $\phi(x)$): $n_aH$\\
+Addition of vectors inside activation function: 2H\\
+$W_{in}^Tx^{(i,j)}: H \times (D\ multiplications + D-1\ addtions) = H \times (2D-1)$\\
+$W_{W}^T h^{(i-1,j)}: H \times (H\ multiplications + H-1\ addtions) = H \times (2H-1)$\\
+$W_{N}^T h^{(i,j-1)}: H \times (H\ multiplications + H-1\ addtions) = H \times (2H-1)$\\
+Total:$H\times(n_a + 2 + 2D-1 + 2H-1 + 2H-1) = H\times(n_a + 2D + 4H - 1) = O(H \times (D + H))$\\
+For $G \times G$ hidden vectors in the grid: $O(G \times G \times H \times (D + H)) = O(G^2  \times H \times (D + H))$\\
+
+(b)\\
+Assume that addition and activation function can be done in the same step as matrix-vector multiplications.\\
+$2G - 1$ steps will be needed to computed the hidden activations of the $G \times G$ grid. \\
+One way of doing is computing the activations in the following sequence:\\
+Step 1: $h^{(0,0)}$\\
+Step 2: $h^{(1,0)}$, $h^{(0,1)}$\\
+Step 3: $h^{(0,2)}$, $h^{(1,1)}$, $h^{(2,0)}$\\
+...\\
+Step $2G - 2$: $h^{(G-1,G)}$, $h^{(G, G-1)}$\\
+Step $2G - 1$: $h^{(G,G)}$\\
+In this sequence, when we do a step, all the information for calculating each hidden activations is.\\
+
+(c)\\
+Disadvantage: The calculations for a conv net can be well parallelized. Less seqential steps are required to compute an conv net with same dimension compare to an MDRNN.\\
+Advantage: MDRNN can capture the sequential relationship between the datas and extract more information compare to CNN.\\
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\noindent \textit{Reversibility}\\
+
+(a)
+\begin{equation}
+\begin{split}
+\mathbf s^{(k+1)} &= (\boldsymbol \theta^{(k+1)}, \mathbf p^{(k+1)})\\
+\boldsymbol \theta^{(k)} &= \boldsymbol \theta^{(k+1)} - \mathbf p^{(k+1)}\\
+\mathbf p^{(k)} &= \frac{\mathbf p^{(k+1)} + \alpha\nabla J(\boldsymbol \theta^{(k)})}{\beta}\\
+\mathbf s^{(k)} &= (\boldsymbol \theta^{(k)}, \mathbf p^{(k)})
+\end{split}
+\end{equation}
+
+(b)\\
+\begin{equation}
+\begin{split}
+\frac{\partial \mathbf s^{(k+1)}}{\partial \mathbf s^{(k)}} 
+\end{split}
+\end{equation}
+Since the top half and bottom half of the matrix is identical, the rank is D < 2D. The determinant of the matrix is 0\\
+\end{homeworkProblem}
+\clearpage
+%----------------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,4 @@
+rnn: 4:00
+rnn with additive attention:11:20
+rnn with scaled dot attention:11:30
+Transformer: 6:40
